@@ -1,0 +1,320 @@
+/* Quiz Modal Styles */
+.quiz-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3001;
+}
+
+.quiz-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 3002;
+    overflow: hidden;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1D4D4F 0%, #507F7C 100%);
+    color: white;
+}
+
+.quiz-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-quiz {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.quiz-content {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.quiz-step {
+    display: none;
+}
+
+.quiz-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.quiz-step h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.quiz-option {
+    cursor: pointer;
+    position: relative;
+}
+
+.quiz-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.option-content i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.quiz-option input:checked + .option-content {
+    border-color: var(--secondary-color);
+    background-color: rgba(230, 179, 37, 0.1);
+}
+
+.quiz-slider {
+    margin-bottom: 25px;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #e9ecef;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.loading-animation {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--secondary-color);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.result-content {
+    text-align: center;
+}
+
+.result-content h4 {
+    margin-bottom: 15px;
+}
+
+.result-content p {
+    margin-bottom: 25px;
+    color: #6c757d;
+}
+
+.plan-preview {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.plan-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.plan-header i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.plan-header h5 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.plan-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.quiz-step .btn {
+    margin-right: 10px;
+}
+
+/* Daily Inspiration Styles */
+.daily-inspiration {
+    background: linear-gradient(135deg, rgba(29, 77, 79, 0.05) 0%, rgba(80, 127, 124, 0.05) 100%);
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+    margin: 20px auto 40px;
+    max-width: 800px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.inspiration-icon {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-right: 20px;
+}
+
+.daily-inspiration blockquote {
+    margin: 0;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+/* Prayer Time Widget Styles */
+.prayer-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.next-prayer h4 {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.prayer-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.prayer-time {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.prayer-countdown {
+    background-color: rgba(230, 179, 37, 0.3);
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* For animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .daily-inspiration {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .inspiration-icon {
+        margin: 0 0 15px;
+    }
+}
