@@ -40,20 +40,6 @@ Website ini dibuat untuk menyambut bulan Ramadan dengan fitur-fitur interaktif s
 
 ---
 
-## Struktur Folder
-```
-|-- ai.jpg                 (JPG File)
-|-- background.jpg         (JPG File)
-|-- index.html             (HTML Source File)
-|-- logo.jpg               (JPG File)
-|-- README.md              (Markdown Source File)
-|-- script.js              (JavaScript Source File)
-|-- style.css              (CSS Source File)
-|-- styling.css            (CSS Source File)
-```
-
----
-
 ## Cara Penggunaan
 1. Tambahkan elemen HTML dengan id berikut:
    - `days`, `hours`, `minutes`, `seconds` untuk countdown.
